@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Reminder</title>
 </head>
 <body>
@@ -9,24 +11,24 @@
 
 <form method="POST">
     <input type="text" name="title" placeholder="Task title" required>
-    <input type="date" name="date" required>
+    <input type="date" name="deadline" required>
     <button type="submit">Add Task</button>
 </form>
 
 <ul>
-{% for t in tasks %}
-    <li style="
-        {% if t[1] < today and t[2] == 0 %}color:red;{% endif %}">
-        {{t[0]}} - {{t[1]}}
-
-        {% if t[2] == 0 %}
-            <a href="/done/{{loop.index0}}">Done</a>
+{% for task in tasks %}
+    <li style="{% if task.deadline < today and not task.completed %}color:red;{% endif %}">
+        <strong>ID: {{ task.id }}</strong> | {{ task.title }} - {{ task.deadline }}
+        {% if not task.completed %}
+            <a href="/done/{{ task.id }}">Mark Done</a>
         {% else %}
             ✔ Done
         {% endif %}
+        | <a href="/edit/{{ task.id }}">Edit</a>
     </li>
 {% endfor %}
 </ul>
 
 </body>
+</html>
 </html>
