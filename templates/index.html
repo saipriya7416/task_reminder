@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Reminder</title>
+</head>
+<body>
+
+<h1>Task Reminder</h1>
+
+<form method="POST">
+    <input type="text" name="title" placeholder="Task title" required>
+    <input type="date" name="date" required>
+    <button type="submit">Add Task</button>
+</form>
+
+<ul>
+{% for t in tasks %}
+    <li style="
+        {% if t[1] < today and t[2] == 0 %}color:red;{% endif %}">
+        {{t[0]}} - {{t[1]}}
+
+        {% if t[2] == 0 %}
+            <a href="/done/{{loop.index0}}">Done</a>
+        {% else %}
+            ✔ Done
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
