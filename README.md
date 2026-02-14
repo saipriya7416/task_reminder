@@ -66,7 +66,7 @@ git push
 
 ## Submission
 - GitHub repo link-https://github.com/saipriya7416/task_reminder.git
-- Video file or link
+- Video file or link-https://drive.google.com/file/d/12X3pUcCT7v7sFrVJMKPZ77AOT9c9XIFP/view?usp=drivesdk
 
 ## GitHub Repository
 [https://github.com/saipriya7416/task_reminder](https://github.com/saipriya7416/task_reminder)
