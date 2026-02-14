@@ -65,7 +65,7 @@ git push
 5. Show GitHub repo and README
 
 ## Submission
-- GitHub repo link
+- GitHub repo link-https://github.com/saipriya7416/task_reminder.git
 - Video file or link
 
 ## GitHub Repository
